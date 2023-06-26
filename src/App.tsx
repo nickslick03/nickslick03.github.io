@@ -1,6 +1,18 @@
+import Contact from "./Contact";
+import Header from "./Header";
+import Main from "./Main";
+
 const App = () => {
+
   return (
-    <div>h</div>
+    <>
+      <Header />
+      <Main />
+      <Contact />
+      <footer>
+        © 2023 Nicholas Epps
+      </footer>
+    </>
   );
 };
 
