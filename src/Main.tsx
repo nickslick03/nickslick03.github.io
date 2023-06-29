@@ -12,8 +12,10 @@ export type Project = {
     imageAlt: string;
     title: string;
     description: string;
-    linkHref: string;
-    linkText: string;
+    links: {
+        href: string;
+        text: string;
+    }[];
 }
 
 const TEMP: Project[][] = [
@@ -23,8 +25,16 @@ const TEMP: Project[][] = [
             imageAlt: 'Python Code',
             title: 'project',
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque eveniet, pariatur eligendi cumque consectetur odio saepe ipsa deserunt nobis. Temporibus quo facilis vel quae. Ullam ducimus architecto natus repudiandae dolorum!',
-            linkHref: 'https://google.com',
-            linkText: 'google'
+            links: [
+                {
+                    href: 'https://google.com',
+                    text: 'google'
+                },
+                {
+                    href:'./',
+                    text: 'this'
+                }
+            ]
         }
     ],
     [
@@ -33,8 +43,12 @@ const TEMP: Project[][] = [
             imageAlt: 'Itzhak Perlman playing the violin',
             title: 'performance',
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque eveniet, pariatur eligendi cumque consectetur odio saepe ipsa deserunt nobis. Temporibus quo facilis vel quae. Ullam ducimus architecto natus repudiandae dolorum!',
-            linkHref: 'https://youtube.com',
-            linkText: 'youtube'
+            links: [
+                {       
+                    href: 'https://youtube.com',
+                    text: 'youtube'
+                }
+            ]
         }
     ]
 ];
@@ -44,8 +58,8 @@ const Main = () => {
     const [getTab, setTab] = createSignal(Tabs.Projects);
 
     return (
-        <main>
-            <div>
+        <main class="px-4 py-10">
+            <div class="font-bold flex flex-col gap-1 mb-10">
                 <button onClick={() => setTab(Tabs.Projects)}>
                     Projects
                 </button>
@@ -53,8 +67,9 @@ const Main = () => {
                     Performances
                 </button> 
             </div>
-           <div>
-                <For each={TEMP[getTab()]}>{(project) =>
+           <div class="flex flex-col gap-20">
+                <For each={[...TEMP[getTab()], ...TEMP[getTab()]]}>
+                    {(project) =>
                     <ProjectDisplay project={project} />
                 }</For>
            </div>

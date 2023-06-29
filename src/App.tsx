@@ -5,14 +5,11 @@ import Main from "./Main";
 const App = () => {
 
   return (
-    <>
+    <div class="font-Montserrat">
       <Header />
       <Main />
       <Contact />
-      <footer>
-        © 2023 Nicholas Epps
-      </footer>
-    </>
+    </div>
   );
 };
 

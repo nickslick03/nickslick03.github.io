@@ -1,17 +1,17 @@
 const Header = () => {
 
     return (
-        <header>
-            <div>
-                <h1>
+        <header class="h-screen p-4 font-bold flex items-end">
+            <hgroup>
+                <h1 class="text-3xl">
                     Nicholas Epps
                 </h1>
-                <h2>
+                <p class="text-xl">
                     Computer &amp; Information Science
                     <br />
                     Music Minor
-                </h2>
-            </div>
+                </p>
+            </hgroup>
         </header>
     );
 };

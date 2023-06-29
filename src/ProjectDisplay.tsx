@@ -1,3 +1,4 @@
+import { For } from 'solid-js';
 import type { Project } from './Main';
 
 const ProjectDisplay = ({
@@ -14,15 +15,20 @@ const ProjectDisplay = ({
                     alt={project.imageAlt} />
             </div>
             <div>
-                <h3>
+                <h2 class='text-2xl font-bold mt-6 mb-4'>
                     {project.title}
-                </h3>
-                <p>
+                </h2>
+                <p class='mb-4'>
                     {project.description}
                 </p>
-                <a href={project.linkHref}>
-                    {project.linkText}
-                </a>
+                <For each={project.links}>
+                    {(link) =>
+                    <a 
+                        href={link.href}
+                        class='block underline'>
+                        {link.text}
+                    </a>}
+                </For>
             </div>
         </article>
     );
