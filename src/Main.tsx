@@ -1,8 +1,8 @@
 import { createSignal, For } from "solid-js";
 import ProjectDisplay from "./ProjectDisplay";
 import Project from "./ProjectDisplay";
-import projects from "./JSON/projects.json";
-import performances from "./JSON/performances.json";
+import { PROJECTS } from "./JSON/projects";
+ import { PERFORMANCES } from "./JSON/performances";
 
 enum Tabs {
    Projects,
@@ -43,7 +43,7 @@ const Main = () => {
                 </For>
             </div>
            <div class="flex flex-col gap-24">
-                <For each={getTab() === Tabs.Projects ? projects : performances}>
+                <For each={getTab() === Tabs.Projects ? PROJECTS : PERFORMANCES}>
                     {(project) =>
                     <ProjectDisplay project={project} />
                 }</For>

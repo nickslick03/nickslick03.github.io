@@ -35,7 +35,7 @@ const Contact = () => {
                                     <img
                                         src={contact.src}
                                         alt={contact.alt}
-                                        class="w-20" />
+                                        class="w-20 transition-transform duration-200 hover:scale-110" />
                                 </a>
                             </li>}
                     </For>
