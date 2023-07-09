@@ -1,5 +1,6 @@
-import { For } from 'solid-js';
+import { createSignal, For } from 'solid-js';
 import type { Project } from './Main';
+import eleanorMund from './images/eleanorMund.png'
 
 const ProjectDisplay = ({
     project
@@ -7,27 +8,32 @@ const ProjectDisplay = ({
     project: Project;
 }) => {
 
+    console.log(eleanorMund)
+
     return (
         <article>
             <div>
                 <img 
-                    src={project.imageSrc} 
-                    alt={project.imageAlt} />
+                    src={eleanorMund}
+                    alt={project.imageAlt}
+                    class="shadow-lg shadow-[rgba(0,0,0,0.4)]" />
             </div>
             <div>
-                <h2 class='text-2xl font-bold mt-6 mb-4'>
+                <h2 class='text-2xl font-bold mt-6 mb-2'>
                     {project.title}
                 </h2>
-                <p class='mb-4'>
+                <p class='mb-2'>
                     {project.description}
                 </p>
                 <For each={project.links}>
                     {(link) =>
-                    <a 
-                        href={link.href}
-                        class='block underline'>
-                        {link.text}
-                    </a>}
+                    <div>
+                        <a 
+                            href={link.href}
+                            class='underline hover:text-tiffanyBlue'>
+                            {link.text}
+                        </a>    
+                    </div>}
                 </For>
             </div>
         </article>

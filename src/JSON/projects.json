@@ -1,0 +1,50 @@
+[
+  {
+    "imageSrc": "../images/eleanorMund.png",
+    "imageAlt": "Python Code",
+    "title": "project",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque eveniet, pariatur eligendi cumque consectetur odio saepe ipsa deserunt nobis. Temporibus quo facilis vel quae. Ullam ducimus architecto natus repudiandae dolorum!",
+    "links": [
+      {
+        "href": "https://google.com",
+        "text": "google"
+      },
+      {
+        "href": "./",
+        "text": "this"
+      }
+    ]
+  },
+  {
+    "imageSrc": "https://cdn.static-economist.com/sites/default/files/images/2015/09/blogs/economist-explains/code2.png",
+    "imageAlt": "Python Code",
+    "title": "project",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque eveniet, pariatur eligendi cumque consectetur odio saepe ipsa deserunt nobis. Temporibus quo facilis vel quae. Ullam ducimus architecto natus repudiandae dolorum!",
+    "links": [
+      {
+        "href": "https://google.com",
+        "text": "google"
+      },
+      {
+        "href": "./",
+        "text": "this"
+      }
+    ]
+  },
+  {
+    "imageSrc": "https://cdn.static-economist.com/sites/default/files/images/2015/09/blogs/economist-explains/code2.png",
+    "imageAlt": "Python Code",
+    "title": "project",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque eveniet, pariatur eligendi cumque consectetur odio saepe ipsa deserunt nobis. Temporibus quo facilis vel quae. Ullam ducimus architecto natus repudiandae dolorum!",
+    "links": [
+      {
+        "href": "https://google.com",
+        "text": "google"
+      },
+      {
+        "href": "./",
+        "text": "this"
+      }
+    ]
+  }
+]

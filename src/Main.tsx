@@ -1,6 +1,8 @@
 import { createSignal, For } from "solid-js";
 import ProjectDisplay from "./ProjectDisplay";
 import Project from "./ProjectDisplay";
+import projects from "./JSON/projects.json";
+import performances from "./JSON/performances.json";
 
 enum Tabs {
    Projects,
@@ -18,57 +20,30 @@ export type Project = {
     }[];
 }
 
-const TEMP: Project[][] = [
-    [
-        {
-            imageSrc: 'https://cdn.static-economist.com/sites/default/files/images/2015/09/blogs/economist-explains/code2.png',
-            imageAlt: 'Python Code',
-            title: 'project',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque eveniet, pariatur eligendi cumque consectetur odio saepe ipsa deserunt nobis. Temporibus quo facilis vel quae. Ullam ducimus architecto natus repudiandae dolorum!',
-            links: [
-                {
-                    href: 'https://google.com',
-                    text: 'google'
-                },
-                {
-                    href:'./',
-                    text: 'this'
-                }
-            ]
-        }
-    ],
-    [
-        {
-            imageSrc: 'https://i.pinimg.com/originals/55/93/20/5593201e5ae803d9711638db13ef667a.jpg',
-            imageAlt: 'Itzhak Perlman playing the violin',
-            title: 'performance',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque eveniet, pariatur eligendi cumque consectetur odio saepe ipsa deserunt nobis. Temporibus quo facilis vel quae. Ullam ducimus architecto natus repudiandae dolorum!',
-            links: [
-                {       
-                    href: 'https://youtube.com',
-                    text: 'youtube'
-                }
-            ]
-        }
-    ]
-];
-
 const Main = () => {
 
     const [getTab, setTab] = createSignal(Tabs.Projects);
 
     return (
-        <main class="px-4 py-10">
-            <div class="font-bold flex flex-col gap-1 mb-10">
-                <button onClick={() => setTab(Tabs.Projects)}>
-                    Projects
-                </button>
-                <button onClick={() => setTab(Tabs.Perforamances)}>
-                    Performances
-                </button> 
+        <main class="px-4 py-10 bg-slate-700 bg-opacity-40 shadow-content">
+            <div class="text-2xl font-bold flex flex-col items-center gap-4 mb-10">
+                <For each={["Projects", "Performances"]}>
+                    {(tab, i) =>
+                    <button
+                        class="sm:hover:text-tiffanyBlue sm:[&:hover>div]:bg-tiffanyBlue" 
+                        onClick={() => setTab(i())}>
+                        {tab}
+                        <div 
+                            class="w-full h-0.5 bg-gunmetal -my-0.5 
+                            scale-x-0 origin-left transition-transform duration-1000"
+                            style={{
+                                'transform': getTab() === i() ? 'scaleX(1)' : 'scaleX(0)',
+                            }}></div>
+                    </button>}
+                </For>
             </div>
-           <div class="flex flex-col gap-20">
-                <For each={[...TEMP[getTab()], ...TEMP[getTab()]]}>
+           <div class="flex flex-col gap-24">
+                <For each={getTab() === Tabs.Projects ? projects : performances}>
                     {(project) =>
                     <ProjectDisplay project={project} />
                 }</For>

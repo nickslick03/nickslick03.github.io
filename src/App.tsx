@@ -5,7 +5,7 @@ import Main from "./Main";
 const App = () => {
 
   return (
-    <div class="font-Montserrat">
+    <div class="font-Montserrat bg-graident-three bg-fixed">
       <Header />
       <Main />
       <Contact />
