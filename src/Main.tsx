@@ -2,7 +2,6 @@ import { createSignal, For } from "solid-js";
 import ProjectDisplay from "./ProjectDisplay";
 import Project from "./ProjectDisplay";
 import { PROJECTS } from "./JSON/projects";
- import { PERFORMANCES } from "./JSON/performances";
 
 enum Tabs {
    Projects,
@@ -27,7 +26,7 @@ const Main = () => {
     return (
         <main class="px-4 py-10 bg-slate-700 bg-opacity-40 shadow-content">
             <div class="text-2xl font-bold flex flex-col items-center gap-4 mb-10">
-                <For each={["Projects", "Performances"]}>
+                <For each={["Projects", "Resume"]}>
                     {(tab, i) =>
                     <button
                         class="sm:hover:text-tiffanyBlue sm:[&:hover>div]:bg-tiffanyBlue" 
@@ -43,7 +42,7 @@ const Main = () => {
                 </For>
             </div>
            <div class="flex flex-col gap-24">
-                <For each={getTab() === Tabs.Projects ? PROJECTS : PERFORMANCES}>
+                <For each={PROJECTS}>
                     {(project) =>
                     <ProjectDisplay project={project} />
                 }</For>
