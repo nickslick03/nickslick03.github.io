@@ -1,5 +1,5 @@
 import { For } from "solid-js";
-import Footer from "./Footer";
+import Footer from "../Footer";
 
 const CONTACT_LIST = [
     {
@@ -30,14 +30,14 @@ const Contact = () => {
                 <ul class="flex gap-8 items-center">
                     <For each={CONTACT_LIST}>
                         {(contact) =>
-                            <li>
-                                <a href={contact.href}>
-                                    <img
-                                        src={contact.src}
-                                        alt={contact.alt}
-                                        class="w-20 transition-transform duration-200 hover:scale-110" />
-                                </a>
-                            </li>}
+                        <li>
+                            <a href={contact.href}>
+                                <img
+                                    src={contact.src}
+                                    alt={contact.alt}
+                                    class="w-20 transition-transform duration-200 hover:scale-110" />
+                            </a>
+                        </li>}
                     </For>
                 </ul>
             </section>

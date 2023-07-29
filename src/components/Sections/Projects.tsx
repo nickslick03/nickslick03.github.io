@@ -1,5 +1,6 @@
-import { createSignal, For } from 'solid-js';
-import type { Project } from './Main';
+import { For } from 'solid-js';
+import type { Project } from '../Main';
+import { PROJECTS } from '../../JSON/projects';
 
 const ProjectDisplay = ({
     project
@@ -37,4 +38,16 @@ const ProjectDisplay = ({
     );
 };
 
-export default ProjectDisplay;
+const Projects = () => {
+
+    return (
+        <div class="flex flex-col gap-16">
+            <For each={PROJECTS}>
+                {(project) =>
+                <ProjectDisplay project={project} />
+            }</For>
+        </div>
+    );
+}
+
+export default Projects;

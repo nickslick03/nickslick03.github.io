@@ -17,8 +17,8 @@ module.exports = {
         linear-gradient(45deg, #ADEBE9, rgba(255,255,255,0) 70.71%)`
       },
       boxShadow: {
-        content: '0 0 20px rgba(0, 0, 0, 0.3)',
-        insetContent: '0 0 10px rgba(0, 0, 0, 0.4) inset'
+        section: '0 0 20px rgba(0, 0, 0, 0.3)',
+        inset: '0 0 10px rgba(0, 0, 0, 0.4) inset'
       },
       colors: {
       gunmetal: '#11272D',
