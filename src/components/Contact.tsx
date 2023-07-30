@@ -22,28 +22,23 @@ const CONTACT_LIST = [
 const Contact = () => {
 
     return (
-        <div class="h-screen flex flex-col">
-            <section class="flex-1 flex flex-col justify-center items-center gap-10">
-                <h2 
-                    id="Contact"
-                    class="text-2xl font-bold">
-                    Get in Touch.
-                </h2>
-                <ul class="flex gap-8 items-center">
-                    <For each={CONTACT_LIST}>
-                        {(contact) =>
-                        <li>
-                            <a href={contact.href}>
-                                <img
-                                    src={contact.src}
-                                    alt={contact.alt}
-                                    class="w-20 transition-transform duration-200 hover:scale-110" />
-                            </a>
-                        </li>}
-                    </For>
-                </ul>
-            </section>
-            <Footer />
+        <div class="h-screen flex flex-col justify-center items-center gap-10">
+            <h2 class="text-2xl font-bold">
+                Get in Touch.
+            </h2>
+            <ul class="flex gap-8 items-center">
+                <For each={CONTACT_LIST}>
+                    {(contact) =>
+                    <li>
+                        <a href={contact.href}>
+                            <img
+                                src={contact.src}
+                                alt={contact.alt}
+                                class="w-20 transition-transform duration-200 hover:scale-110" />
+                        </a>
+                    </li>}
+                </For>
+            </ul>
         </div>
     );
 };
