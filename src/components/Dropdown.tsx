@@ -27,7 +27,7 @@ const Dropdown = (props: {
 
     return (
         <div 
-            class="fixed top-0 w-screen pt-4 
+            class="fixed top-0 w-full pt-4 
             flex flex-col items-center 
             opacity-0 transition-opacity duration-1000"
             style={isVisible() ? 'opacity: 1' : ''}>
@@ -53,7 +53,7 @@ const Dropdown = (props: {
                 style={{
                     "transform": `translateY(${isSelected() ? '0' : '-100'}%)`
                 }}>
-                <ul class="text-tiffanyBlue flex flex-col items-center gap-10 text-xl">
+                <ul class="text-tiffanyBlue flex flex-col items-center gap-8 text-xl">
                     <For each={props.elementIDs}>
                         {(elementID) => 
                         <li

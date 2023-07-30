@@ -24,7 +24,9 @@ const Contact = () => {
     return (
         <div class="h-screen flex flex-col">
             <section class="flex-1 flex flex-col justify-center items-center gap-10">
-                <h2 class="text-2xl font-bold">
+                <h2 
+                    id="Contact"
+                    class="text-2xl font-bold">
                     Get in Touch.
                 </h2>
                 <ul class="flex gap-8 items-center">

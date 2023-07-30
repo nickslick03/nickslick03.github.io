@@ -59,7 +59,7 @@ const Main = () => {
 
     return (
         <main class="flex flex-col gap-6">
-            <Dropdown elementIDs={sections.map(({title}) => title)} />
+            <Dropdown elementIDs={sections.map(({title}) => title).concat('Contact')} />
             <For each={sections}>
                 {({title, Element}, i) =>
                 <section 
