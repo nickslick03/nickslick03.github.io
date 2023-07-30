@@ -59,13 +59,14 @@ const Main = () => {
 
     return (
         <main class="flex flex-col gap-6">
+            <Dropdown elementIDs={sections.map(({title}) => title)} />
             <For each={sections}>
                 {({title, Element}, i) =>
                 <section 
                     class={'px-4 py-8 ' + (i() % 2 === 0 ? "bg-slate-700 bg-opacity-40 shadow-section" : '')}
                     id={title}
                     ref={sectionElements[i()]}>
-                    <h2 class="w-min text-2xl text-gunmetal text-center font-bold pb-8">
+                    <h2 class="w-min text-2xl text-gunmetal font-bold pb-8">
                         {title}
                         <div 
                             class="w-full h-0.5 bg-gunmetal origin-left transition-transform duration-[2000ms]"
@@ -76,7 +77,6 @@ const Main = () => {
                     <Element />
                 </section>}
             </For>
-            <Dropdown elementIDs={sections.map(({title}) => title)} />
         </main>
     );
 };

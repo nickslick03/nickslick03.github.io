@@ -14,6 +14,7 @@ const ProjectDisplay = ({
                 <img 
                     src={project.imageSrc}
                     alt={project.imageAlt}
+                    loading='lazy'
                     class="shadow-lg shadow-[rgba(0,0,0,0.4)]" />
             </div>
             <div>

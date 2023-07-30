@@ -1,6 +1,6 @@
 import Header from "./Header";
 import Main from "./Main";
-import Contact from "./Sections/Contact";
+import Contact from "./Contact";
 
 const App = () => {
 
