@@ -28,23 +28,16 @@ const Dropdown = (props: {
     return (
         <div 
             class="fixed top-0 w-full pt-4 
-            flex flex-col items-center 
-            opacity-0 transition-opacity duration-1000"
-            style={isVisible() ? 'opacity: 1' : ''}>
-            <button onclick={() => setIsSelected(true)}>
-                <div 
-                    class="w-6 transition-opacity duration-1000"
-                    style={{
-                        "filter": "drop-shadow(0 0 8px rgba(0,0,0,.8)",
-                        "opacity": isSelected() ? "0" : "1"}}>
-                    <For each={Array(3)}>
-                        {(_, i) =>
-                        <div 
-                            class="h-[2px] w-full bg-gunmetal"
-                            style={i() !== 2 ? "margin-bottom: 9px" : ""}>
-                        </div>}
+            flex flex-col items-center">
+            <button
+                class="w-6 h-6 aspect-square opacity-0 transition-opacity duration-1000"
+                style={"filter: drop-shadow(2px 4px 6px black); " + (isVisible() && !isSelected() ? "opacity: 1" : "")}
+                onclick={() => setIsSelected(true)}>
+                <svg width={24} height={24}>
+                    <For each={[0, 11, 22]}>
+                        {(y) => <rect width="100%" height={2} y={y} />}
                     </For>
-                </div>
+                </svg>
             </button>
             <nav 
                 class="absolute top-0 w-full pt-4 pb-12 
@@ -65,13 +58,17 @@ const Dropdown = (props: {
                         </li>}
                     </For>
                     <li 
-                        class="w-6 text-base aspect-square mx-auto 
+                        class="w-7 h-7
                         bg-slate-700 bg-opacity-40 
-                        rounded-full shadow shadow-[rgba(0,0,0,.4)] select-none
+                        rounded-full select-none
                         flex justify-center items-center cursor-pointer"
                         onclick={() => setIsSelected(false)}>
-                        <button tabIndex={isSelected() ? 0 : -1}>
-                            ⨉
+                        <button 
+                            tabIndex={isSelected() ? 0 : -1}>
+                            <svg width={12} height={12}>
+                                <line x1={0} y1={0} x2={12} y2={12} stroke="#ADEBE9" stroke-width={2}/>
+                                <line x1={0} y1={12} x2={12} y2={0} stroke="#ADEBE9" stroke-width={2}/>
+                            </svg>
                         </button>
                     </li>
                 </ul>
