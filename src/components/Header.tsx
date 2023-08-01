@@ -7,7 +7,7 @@ const Header = () => {
     setTimeout(() => textRefs.forEach(ref => ref.style.transform = 'translateX(0)'), 200);
 
     return (
-        <header class="h-screen p-4 font-bold flex items-end">
+        <header class="h-[100svh] p-4 font-bold flex items-end">
             <hgroup>
                 <h1 
                     class="text-3xl w-min translate-x-[calc(-100%-1rem)] transition-transform duration-[2000ms]"
