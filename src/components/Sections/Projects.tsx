@@ -40,7 +40,7 @@ const ProjectDisplay = ({
 const Projects = () => {
 
     return (
-        <div class="flex flex-col gap-16 lg:gap-32 py-8">
+        <div class="flex flex-col gap-16 lg:gap-32">
             <For each={PROJECTS}>
                 {(project) =>
                 <ProjectDisplay project={project} />
