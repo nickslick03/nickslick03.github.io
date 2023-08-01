@@ -14,7 +14,7 @@ const Header = () => {
                     ref={textRefs[0] as unknown as any}>
                     Nicholas&nbsp;Epps
                     <div 
-                        class="w-full h-0.5 bg-gunmetal my-2 origin-right scale-x-0 transition-transform duration-[2000ms]"
+                        class="w-full h-0.5 bg-gunmetal my-2 md:my-3 origin-right scale-x-0 transition-transform duration-[2000ms]"
                         ref={dividerRef as unknown as any}></div>
                 </h1>
                 <p 

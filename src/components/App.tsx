@@ -5,7 +5,7 @@ import Footer from "./Footer";
 const App = () => {
 
   return (
-    <div class="font-Montserrat bg-graident-three bg-fixed">
+    <div class="font-Montserrat text-gunmetal bg-graident-three bg-fixed">
       <Header />
       <Main />
       <Footer />

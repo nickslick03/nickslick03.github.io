@@ -27,7 +27,7 @@ const Dropdown = (props: {
 
     return (
         <div 
-            class="fixed top-0 w-full pt-4 
+            class="fixed top-0 w-full pt-4 md:pt-6
             flex flex-col items-center">
             <button
                 class="w-6 h-6 aspect-square opacity-0 transition-opacity duration-1000"
@@ -40,7 +40,7 @@ const Dropdown = (props: {
                 </svg>
             </button>
             <nav 
-                class="absolute top-0 w-full pt-4 pb-12 
+                class="absolute top-0 w-full pt-4 md:pt-6 pb-12 
                 bg-gradient-to-b from-gunmetal to-transparent 
                 transition-transform duration-1000"
                 style={{

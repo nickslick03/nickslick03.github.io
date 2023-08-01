@@ -2,7 +2,7 @@ import { For, Show, onMount } from "solid-js";
 import Projects from "./Sections/Projects";
 import About from "./Sections/About";
 import Resume from "./Sections/Resume";
-import Dropdown from "./Dropdown";
+import Nav from "./Nav";
 import Contact from "./Contact";
 
 export type Project = {
@@ -53,6 +53,7 @@ const Main = () => {
             if (prevIndex !== undefined)
                 underlineElements[prevIndex].style.transform = 'scaleX(0)';
             underlineElements[currIndex].style.transform = 'scaleX(1)';
+            console.log(underlineElements[currIndex])
             prevIndex = currIndex;
         }, 
         {
@@ -71,7 +72,7 @@ const Main = () => {
 
     return (
         <main class="flex flex-col">
-            <Dropdown elementIDs={sections.map(({id}) => id)} />
+            <Nav elementIDs={sections.map(({id}) => id)} />
             <For each={sections}>
                 {({id, hasTitle, background, Element}, i) =>
                 <section 
@@ -79,17 +80,19 @@ const Main = () => {
                     (background ? "bg-slate-700 bg-opacity-40 shadow-section" : '')}
                     id={id}
                     ref={sectionElements[i()]}>
-                    <Show when={hasTitle}>
-                        <h2 class="w-min text-2xl text-gunmetal font-bold pb-8 first-letter:capitalize">
-                            {id}
-                            <div 
-                                class="w-full h-0.5 bg-gunmetal origin-left transition-transform duration-[2000ms]"
-                                style="transform: scaleX(0)"
-                                ref={underlineElements[i()]}>
-                            </div>
-                        </h2>
-                    </Show> 
-                    <Element />
+                    <div class="max-w-4xl mx-auto">
+                        <Show when={hasTitle}>
+                            <h2 class="w-min text-2xl font-bold first-letter:capitalize">
+                                {id}
+                                <div 
+                                    class="w-full h-0.5 mb-8 bg-gunmetal origin-left transition-transform duration-[2000ms]"
+                                    style="transform: scaleX(0)"
+                                    ref={underlineElements[i()]}>
+                                </div>
+                            </h2>
+                        </Show> 
+                        <Element />     
+                    </div>
                 </section>}
             </For>
         </main>

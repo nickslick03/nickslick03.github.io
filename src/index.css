@@ -4,3 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+img {
+    @apply max-w-none;
+}
+
+@media (min-width: 768px) {
+    :root {
+        font-size: 1.4rem;
+    }
+}
