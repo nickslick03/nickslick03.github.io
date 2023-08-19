@@ -20,7 +20,7 @@ const Header = () => {
                 <p 
                     class="text-xl translate-x-[calc(-100%-1rem)] transition-transform duration-[2000ms] delay-500"
                     ref={textRefs[1] as unknown as any}>
-                    Computer &amp; Information Science
+                    Computer &amp; Information Science Major
                 </p>
                 <p 
                     class="text-xl translate-x-[calc(-100%-1rem)] transition-transform duration-[2000ms] delay-1000"

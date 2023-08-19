@@ -1,13 +1,12 @@
-import resume from '../../resume.pdf'
-
 const Resume = () => {
 
     return (
         <div class='flex justify-center'>
-            <object 
-                data={resume} 
-                type="application/pdf"
-                class="w-8/12 aspect-[16/21]"></object>
+            <iframe 
+                src="https://docs.google.com/document/d/1c5NVb0hZiysIe3B_YXDhRHveN21YD-795bNUeKVS8mo/edit?usp=sharing"
+                title="Resume for Nicholas"
+                class="w-full h-96">
+            </iframe>
         </div>
     );
 };
